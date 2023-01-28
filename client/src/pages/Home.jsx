@@ -29,6 +29,7 @@ const Home = () => {
       const response = await fetch('https://dalle-arbb.onrender.com/api/v1/post', {
         method: 'GET',
         headers: {
+          'Access-Control-Allow-Origin': true,
           'Content-Type': 'application/json',
         },
       });
