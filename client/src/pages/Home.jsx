@@ -26,10 +26,9 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+      const response = await fetch('http://localhost:8080/api/v1/post', {
         method: 'GET',
         headers: {
-          'Access-Control-Allow-Origin': true,
           'Content-Type': 'application/json',
         },
       });

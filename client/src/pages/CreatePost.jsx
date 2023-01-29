@@ -31,7 +31,6 @@ const CreatePost = () => {
         const response = await fetch('http://localhost:8080/api/v1/dalle', {
           method: 'POST',
           headers: {
-            'Access-Control-Allow-Origin': true,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
@@ -57,20 +56,19 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+        const response = await fetch('http://localhost:8080/api/v1/post', {
           method: 'POST',
           headers: {
-            'Access-Control-Allow-Origin': true,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...form }),
+          body: JSON.stringify(form),
         });
 
         await response.json();
         alert('Success');
         navigate('/');
       } catch (err) {
-        alert(err);
+        alert(err, "asdkfj");
       } finally {
         setLoading(false);
       }
